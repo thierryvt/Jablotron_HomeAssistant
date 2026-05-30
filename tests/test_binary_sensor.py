@@ -38,6 +38,7 @@ def test_flag_binary_sensor_reads_flag_state() -> None:
 
     assert entity.available is True
     assert entity.is_on is True
+    assert entity.translation_key == "entry_delay"
 
 
 def test_prfstate_binary_sensor_reads_mapped_device_state() -> None:

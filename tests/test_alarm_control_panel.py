@@ -33,6 +33,7 @@ def test_alarm_state_maps_section_states() -> None:
     """Test section state mapping."""
     state = JablotronState(connected=True, sections={1: SECTION_READY})
     assert _entity(state).alarm_state is AlarmControlPanelState.DISARMED
+    assert _entity(state).translation_key == "section"
 
     state.sections[1] = SECTION_ARMED_PART
     assert _entity(state).alarm_state is AlarmControlPanelState.ARMED_HOME

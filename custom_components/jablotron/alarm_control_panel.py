@@ -83,6 +83,7 @@ class JablotronAlarmControlPanel(AlarmControlPanelEntity):
         port = entry.data.get(CONF_PORT, DEFAULT_PORT)
 
         self._attr_name = f"Section {section}"
+        self._attr_translation_key = "section"
         self._attr_unique_id = f"{host}_{port}_section_{section}"
         self._attr_device_info = DeviceInfo(
             identifiers={(DOMAIN, f"{host}:{port}")},

@@ -1,0 +1,75 @@
+{
+  "entity": {
+    "alarm_control_panel": {
+      "section": {
+        "default": "mdi:shield-home",
+        "state": {
+          "armed_away": "mdi:shield-lock",
+          "armed_home": "mdi:shield-home",
+          "arming": "mdi:shield-sync",
+          "disarmed": "mdi:shield-off",
+          "pending": "mdi:shield-alert",
+          "triggered": "mdi:shield-alert"
+        }
+      }
+    },
+    "binary_sensor": {
+      "connection": {
+        "default": "mdi:lan-connect",
+        "state": {
+          "on": "mdi:lan-connect",
+          "off": "mdi:lan-disconnect"
+        }
+      },
+      "entry_delay": {
+        "default": "mdi:door-open",
+        "state": {
+          "on": "mdi:door-open",
+          "off": "mdi:door-closed"
+        }
+      },
+      "exit_delay": {
+        "default": "mdi:exit-run",
+        "state": {
+          "on": "mdi:exit-run",
+          "off": "mdi:shield-check"
+        }
+      },
+      "internal_warning": {
+        "default": "mdi:alert-circle-outline",
+        "state": {
+          "on": "mdi:alert-circle",
+          "off": "mdi:alert-circle-outline"
+        }
+      },
+      "external_warning": {
+        "default": "mdi:alert-outline",
+        "state": {
+          "on": "mdi:alert",
+          "off": "mdi:alert-outline"
+        }
+      },
+      "fire_alarm": {
+        "default": "mdi:fire-off",
+        "state": {
+          "on": "mdi:fire",
+          "off": "mdi:fire-off"
+        }
+      },
+      "intruder_alarm": {
+        "default": "mdi:shield-account-outline",
+        "state": {
+          "on": "mdi:shield-alert",
+          "off": "mdi:shield-account-outline"
+        }
+      },
+      "panic_alarm": {
+        "default": "mdi:alarm-light-outline",
+        "state": {
+          "on": "mdi:alarm-light",
+          "off": "mdi:alarm-light-outline"
+        }
+      }
+    }
+  }
+}

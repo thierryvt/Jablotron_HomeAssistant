@@ -270,6 +270,18 @@ Expected entities:
 
 Entity IDs can vary if Home Assistant has already used the same name.
 
+## Icons
+
+Integration artwork is stored in `custom_components/jablotron/brand/`:
+
+- `icon.png`
+- `logo.png`
+
+Entity icons are defined through Home Assistant icon translations in
+`custom_components/jablotron/icons.json`. Static alarm, connection, delay, and
+alarm flag entities have state-aware Material Design Icons. PRFSTATE device
+sensors use the `device_class` from their mapping where possible.
+
 ## Development
 
 This project targets Home Assistant 2026.5 or newer.
@@ -291,4 +303,10 @@ Run validation:
 ```powershell
 .\.venv\Scripts\python.exe -m compileall custom_components tests
 .\.venv\Scripts\python.exe -m pytest
+```
+
+Regenerate brand assets:
+
+```powershell
+.\.venv\Scripts\python.exe tools\generate_brand_assets.py
 ```

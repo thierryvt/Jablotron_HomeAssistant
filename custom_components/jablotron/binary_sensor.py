@@ -141,6 +141,7 @@ class JablotronConnectionBinarySensor(JablotronBinarySensorEntity):
 
     _attr_name = "Connection"
     _attr_device_class = BinarySensorDeviceClass.CONNECTIVITY
+    _attr_translation_key = "connection"
 
     def __init__(self, hub: JablotronHub, entry: ConfigEntry) -> None:
         super().__init__(hub, entry)
@@ -175,6 +176,7 @@ class JablotronFlagBinarySensor(JablotronBinarySensorEntity):
         port = entry.data.get(CONF_PORT, DEFAULT_PORT)
 
         self._attr_name = f"Section {section} {name}"
+        self._attr_translation_key = key
         self._attr_unique_id = f"{host}_{port}_section_{section}_{key}"
         self._attr_device_class = device_class
 
