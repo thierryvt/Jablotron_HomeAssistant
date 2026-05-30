@@ -1,0 +1,6 @@
+{
+  "name": "Jablotron",
+  "render_readme": true,
+  "domains": ["alarm_control_panel", "binary_sensor"],
+  "homeassistant": "2025.11.0"
+}
