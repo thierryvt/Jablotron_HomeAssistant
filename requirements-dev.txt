@@ -1,0 +1,3 @@
+homeassistant==2026.5.4
+jablopy==0.1.0
+pytest==9.0.3
