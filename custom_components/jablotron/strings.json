@@ -37,7 +37,7 @@
         },
         "data_description": {
           "sections": "Comma-separated section numbers, for example 1 or 1,2.",
-          "device_mappings": "JSON object keyed by PRFSTATE device number. Example: {\"0\":{\"name\":\"Front Door\",\"device_class\":\"door\"}}"
+          "device_mappings": "JSON object keyed by PRFSTATE device number. See the README for an example mapping."
         }
       }
     },
