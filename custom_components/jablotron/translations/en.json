@@ -3,8 +3,47 @@
   "config": {
     "step": {
       "user": {
-        "title": "Jablotron"
+        "title": "Jablotron",
+        "description": "Connect to the TCP adapter for your Jablotron panel.",
+        "data": {
+          "host": "Host",
+          "port": "Port",
+          "sections": "Sections",
+          "pin": "PIN"
+        },
+        "data_description": {
+          "sections": "Comma-separated section numbers, for example 1 or 1,2.",
+          "pin": "Optional. If left empty, alarm actions can require a code at runtime."
+        }
       }
+    },
+    "error": {
+      "cannot_connect": "Could not connect to the Jablotron TCP adapter.",
+      "invalid_sections": "Enter one or more positive section numbers separated by commas.",
+      "unknown": "Unexpected error."
+    },
+    "abort": {
+      "already_configured": "This Jablotron TCP adapter is already configured."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Jablotron Options",
+        "data": {
+          "sections": "Sections",
+          "reconnect_delay": "Reconnect delay",
+          "device_mappings": "PRFSTATE device mappings"
+        },
+        "data_description": {
+          "sections": "Comma-separated section numbers, for example 1 or 1,2.",
+          "device_mappings": "JSON object keyed by PRFSTATE device number. Example: {\"0\":{\"name\":\"Front Door\",\"device_class\":\"door\"}}"
+        }
+      }
+    },
+    "error": {
+      "invalid_sections": "Enter one or more positive section numbers separated by commas.",
+      "invalid_device_mappings": "Enter a JSON object keyed by PRFSTATE device number. Each value must include a name."
     }
   }
 }
