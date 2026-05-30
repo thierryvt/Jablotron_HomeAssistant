@@ -1,4 +1,3 @@
-[![hacs_badge](https://img.shields.io/badge/HACS-Default-orange.svg?style=for-the-badge)](https://github.com/hacs/default)
 # Jablotron Home Assistant
 
 Home Assistant custom integration for Jablotron alarm panels exposed over an
