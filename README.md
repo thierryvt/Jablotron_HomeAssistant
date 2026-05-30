@@ -27,7 +27,7 @@ This repository is structured for HACS as a custom repository.
 2. Open the three-dot menu and choose **Custom repositories**.
 3. Add this repository URL.
 4. Select category **Integration**.
-5. Install **Jablotron**.
+5. Install **Jablotron TCP**.
 6. Restart Home Assistant.
 
 ### Manual
