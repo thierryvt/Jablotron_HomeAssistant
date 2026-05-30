@@ -9,7 +9,7 @@ from homeassistant.core import HomeAssistant
 from .const import CONF_RECONNECT_DELAY, DEFAULT_PORT, DEFAULT_RECONNECT_DELAY
 from .hub import JablotronHub
 
-PLATFORMS: list[Platform] = [Platform.ALARM_CONTROL_PANEL]
+PLATFORMS: list[Platform] = [Platform.ALARM_CONTROL_PANEL, Platform.BINARY_SENSOR]
 
 
 async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
