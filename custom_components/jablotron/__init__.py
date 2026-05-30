@@ -3,11 +3,13 @@
 from __future__ import annotations
 
 from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import CONF_HOST, CONF_PORT
+from homeassistant.const import CONF_HOST, CONF_PORT, Platform
 from homeassistant.core import HomeAssistant
 
 from .const import CONF_RECONNECT_DELAY, DEFAULT_PORT, DEFAULT_RECONNECT_DELAY
 from .hub import JablotronHub
+
+PLATFORMS: list[Platform] = [Platform.ALARM_CONTROL_PANEL]
 
 
 async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
@@ -23,11 +25,16 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
     await hub.async_start()
 
     entry.runtime_data = hub
+    await hass.config_entries.async_forward_entry_setups(entry, PLATFORMS)
     return True
 
 
 async def async_unload_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
     """Unload a Jablotron config entry."""
     hub: JablotronHub = entry.runtime_data
-    await hub.async_stop()
-    return True
+    unload_ok = await hass.config_entries.async_unload_platforms(entry, PLATFORMS)
+
+    if unload_ok:
+        await hub.async_stop()
+
+    return unload_ok
