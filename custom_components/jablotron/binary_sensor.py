@@ -107,6 +107,9 @@ async def async_setup_entry(
 
     async_add_entities(entities)
 
+    if device_mappings:
+        hub.async_schedule_prfstate_refresh()
+
 
 class JablotronBinarySensorEntity(BinarySensorEntity):
     """Base class for Jablotron binary sensors."""
